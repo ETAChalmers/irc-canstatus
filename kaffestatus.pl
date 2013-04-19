@@ -9,7 +9,7 @@ our %IRSSI = (
     contact     => 'git@atnon.se',
     name        => 'ETAkaffestatus',
     description => 'Lyssnar efter fråga kring kaffe ställd till '.
-		   'Uppkopplad användare',
+		   'uppkopplad användare',
     license     => 'GNU GPLv3',
 );
 
