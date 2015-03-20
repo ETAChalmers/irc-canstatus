@@ -4,7 +4,7 @@ import urllib2
 import datetime
 import random
 
-url = 'http://tjerneld.eta.lan/can.php'
+url = 'http://user01.eta.lan/infosoffa/1/can.php'
 response = urllib2.urlopen(url)
 data = json.load(response)
 response.close()

@@ -3,7 +3,7 @@ use warnings;
 
 use Irssi;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 our %IRSSI = (
     authors     =>  'Anton Landberg',
     contact     =>  'git@atnon.se',
@@ -21,14 +21,14 @@ sub sig_message_public {
     my $MyNick = $server->{nick};
     my $KaffeStatus = "Vem vet?";
     if ($target =~ m/#eta/i) { # only operate in these channels
-        my $KaffeStatus = `python /home/eta2/kaffestatus.py`;
+        my $KaffeStatus = `python /home/eta/.irssi/.scripts/kaffestatus.py`;
         $server->command("msg $target $nick: $KaffeStatus") if ($msg =~ m/$MyNick:.*?kaffe.*?/i);
     }
 }
 
 sub sig_message_private {
     my ($server, $msg, $nick, $nick_addr) = @_;
-    my $KaffeStatus = `python /home/eta2/kaffestatus.py`;
+    my $KaffeStatus = `python /home/eta/.irssi/.scripts/kaffestatus.py`;
     $server->command("msg $nick $KaffeStatus") if ($msg =~ m/.*?kaffe.*?/i);
 }
 
