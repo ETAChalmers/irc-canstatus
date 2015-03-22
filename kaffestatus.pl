@@ -21,7 +21,7 @@ sub sig_message_public {
     my $MyNick = $server->{nick};
     my $KaffeStatus = "Vem vet?";
     if ($target =~ m/#eta/i) { # only operate in these channels
-        my $KaffeStatus = `python /home/eta/.irssi/scriptsi/irc-canstatus/kaffestatus.py`;
+        my $KaffeStatus = `python /home/eta/.irssi/scripts/irc-canstatus/kaffestatus.py`;
         $server->command("msg $target $nick: $KaffeStatus") if ($msg =~ m/$MyNick:.*?kaffe.*?/i);
     }
 }
